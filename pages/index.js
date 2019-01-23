@@ -6,7 +6,7 @@ const Index = (props) => (
   <Layout>
     <h1>Batman TV Shows</h1>
     <ul>
-      {props.shows.map(({show}) => (
+      {props.show.map(({show}) => (
         <li key={show.id}>
           <Link as={`/p/${show.id}`} href={`/post?id=${show.id}`}>
             <a>{show.name}</a>
@@ -24,7 +24,7 @@ Index.getInitialProps = async function() {
   //console.log(`Show data fetched. Count: ${data.length}`)
 
   return {
-    shows: data
+    show: data
   }
 }
 
